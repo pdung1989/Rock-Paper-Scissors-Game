@@ -1,10 +1,12 @@
 const game = () => {
+
   let pScore = 0;
   let cScore = 0;
   let gameOver = false;
   const winningScore = 10;
   let pResult = [];
   let cResult = [];
+
   const winner = document.querySelector('.winner');
   const playerHand = document.querySelector('.player-hand')
   const computerHand = document.querySelector('.computer-hand');
@@ -117,10 +119,7 @@ const game = () => {
       playAgainBtn.classList.add("fadeIn");
     }
   };
-  //reset the game when clicking Play again button
-  playAgainBtn.addEventListener('click', () => {
-    reset();
-  });
+
   //Reset the game
   const reset = () => {
     gameOver = false;
@@ -220,15 +219,21 @@ const game = () => {
       };   
     };
   };
+
+  //Check 3 last items in an array if they are wins in a row
+  const isThreeWinInARow = (resultArr)  => {
+  return resultArr.length === 3 && resultArr.every(item => item === 'w');
+  };
+
+  //reset the game when clicking Play again button
+  playAgainBtn.addEventListener('click', () => {
+    reset();
+  });
+  
   //Is call all the inner function
   startGame();
   playMatch();
 };
 
-//Check 3 last items in an array if they are wins in a row
-const isThreeWinInARow = (resultArr)  => {
-  return resultArr.length === 3 && resultArr.every(item => item === 'w');
-};
-
-//start the game function
+//START THE GAME FUNCTION
 game();
