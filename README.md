@@ -21,3 +21,5 @@ An application that simulates a [Rock paper scissors](https://en.wikipedia.org/w
   1. add a "Play again" button to game over screen
       - button click starts the game again
       - resets all win history
+
+[Link to Play the Game](https://users.metropolia.fi/~dungtra/Rock-Paper-Scissors-Game/)
